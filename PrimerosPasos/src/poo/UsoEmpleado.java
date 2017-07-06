@@ -1,5 +1,7 @@
 package poo;
 
+import java.util.Arrays;
+
 public class UsoEmpleado {
 	public static void main(String[] args) {
 
@@ -15,6 +17,7 @@ public class UsoEmpleado {
 		empleados[5] = new Jefatura("Maria Perez", 95000, 1999, 5, 25);
 		Jefatura jefaFinanzas = (Jefatura) empleados[5];
 		jefaFinanzas.setIncentivo(55000);;
+		Arrays.sort(empleados);
 		
 		for(Empleado fila: empleados){
 			fila.aumentoSueldo(5);

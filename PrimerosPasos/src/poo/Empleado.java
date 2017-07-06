@@ -3,16 +3,15 @@ package poo;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-public class Empleado {	
-	private String nombre;
+public class Empleado extends Persona implements Comparable{	
 	private double sueldo;
 	private Date fechaAlta;
 	private int id;
 	private static int idSiguiente = 1;
 	
 	public Empleado(String nombre, double sueldo, int anio, int mes, int dia){
+		super(nombre);
 		GregorianCalendar calendario = new GregorianCalendar(anio, mes-1, dia);
-		this.nombre = nombre;
 		this.sueldo = sueldo;
 		this.fechaAlta = calendario.getTime();
 		id = idSiguiente;
@@ -32,10 +31,6 @@ public class Empleado {
 		this(nombre, 30000, 2000, 01, 01); 
 	}
 	
-	public String getNombre(){
-		return nombre;
-	}
-	
 	public double getSueldo(){
 		return sueldo;
 	}
@@ -46,6 +41,21 @@ public class Empleado {
 	
 	public Date getFechaAlta(){
 		return fechaAlta;
+	}
+	
+	public String getDescripcion(){
+		return "Este empleado tiene un Id= " + id + " con un sueldo= " + sueldo;
+	}
+	
+	public int compareTo(Object miObjeto){
+		Empleado otroEmpleado = (Empleado) miObjeto;
+		if(this.id < otroEmpleado.id){
+			return -1;
+		}
+		if(this.id < otroEmpleado.id){
+			return 1;
+		}
+		return 0;
 	}
 
 }
