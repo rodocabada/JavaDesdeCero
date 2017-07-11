@@ -17,7 +17,10 @@ public class UsoEmpleado {
 		empleados[5] = new Jefatura("Maria Perez", 95000, 1999, 5, 25);
 		Jefatura jefaFinanzas = (Jefatura) empleados[5];
 		jefaFinanzas.setIncentivo(55000);;
+		System.out.println("El jefe " + jefaFinanzas.getNombre() + " tiene un bonus de: " + jefaFinanzas.setBonus(500));
+		System.out.println("El empleado " + empleados[3].getNombre() + " tiene un bonus de: " + empleados[3].setBonus(200));
 		Arrays.sort(empleados);
+		System.out.println(jefaFinanzas.tomarDesiciones("dar a los empleados un aumento de sueldo de 5%."));
 		
 		for(Empleado fila: empleados){
 			fila.aumentoSueldo(5);

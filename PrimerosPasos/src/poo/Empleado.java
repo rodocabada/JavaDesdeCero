@@ -3,7 +3,7 @@ package poo;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-public class Empleado extends Persona implements Comparable{	
+public class Empleado extends Persona implements Comparable, Trabajadores{	
 	private double sueldo;
 	private Date fechaAlta;
 	private int id;
@@ -56,6 +56,10 @@ public class Empleado extends Persona implements Comparable{
 			return 1;
 		}
 		return 0;
+	}
+	
+	public double setBonus(double gratificacion){
+		return Trabajadores.bonusBase + gratificacion;
 	}
 
 }

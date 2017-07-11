@@ -1,6 +1,6 @@
 package poo;
 
-public class Jefatura extends Empleado {
+public class Jefatura extends Empleado implements Jefes {
 	
 	private double incentivo;
 	
@@ -14,6 +14,15 @@ public class Jefatura extends Empleado {
 	
 	public double getSueldo(){
 		return super.getSueldo() + incentivo;
+	}
+	
+	public String tomarDesiciones(String desicion){
+		return "Un miembro de la dirección ha tomado la desición de: " + desicion;
+	}
+	
+	public double setBonus(double gratificacion){
+		double prima = 2000;
+		return Trabajadores.bonusBase + gratificacion + prima;
 	}
 
 }
