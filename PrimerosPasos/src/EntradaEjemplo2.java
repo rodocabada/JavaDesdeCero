@@ -6,8 +6,8 @@ public class EntradaEjemplo2 {
 		
 		String nombreUsuario = JOptionPane.showInputDialog("Introduce tu nombre, por favor.");
 		String edad = JOptionPane.showInputDialog("Introduce tu edad, por favor.");
-		System.out.println("Hola " + nombreUsuario + ". El año que viene tendras " + 
-		(Integer.parseInt(edad) + 1) + " años.");
+		System.out.println("Hola " + nombreUsuario + ". El aï¿½o que viene tendras " + 
+		(Integer.parseInt(edad) + 1) + " aÃ±os.");
 
 	}
 

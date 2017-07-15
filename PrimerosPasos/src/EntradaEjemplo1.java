@@ -9,8 +9,8 @@ public class EntradaEjemplo1 {
 		String nombreUsuario = entrada.nextLine();
 		System.out.println("Introduce edad, por favor");
 		int edad = entrada.nextInt();
-		System.out.println("Hola " + nombreUsuario + ". El aÒo que viene tendr·s " 
-				+ (edad + 1) + " aÒos");
+		System.out.println("Hola " + nombreUsuario + ". El a√±o que viene tendr√°s " 
+				+ (edad + 1) + " a√±os");
 		entrada.close();
 
 	}
