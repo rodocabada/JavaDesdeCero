@@ -51,15 +51,21 @@ class LaminaConImagen extends JPanel {
 
 	}
 
-	public void paintComponent(Graphics g) {
+	public void paintComponent(Graphics g) throws NullPointerException {
 
 		super.paintComponent(g);
-		if (imagen == null) {
+		
+		try {
+			
+				int anchoImagen = imagen.getWidth(this);
+				g.drawImage(imagen, 0, 0, null);
+			
+		} catch(NullPointerException e) {
+			
 			g.drawString("No podemos cargar la imagen", 10, 10);
-		} else {
-			int anchoImagen = imagen.getWidth(this);
-			g.drawImage(imagen, 0, 0, null);
+			
 		}
+		
 
 	}
 
