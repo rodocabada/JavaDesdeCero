@@ -1,21 +1,21 @@
 import javax.swing.JOptionPane;
 
-public class compruebaCorreo {
+public class CompruebaCorreo {
 
 	public static void main(String[] args) {
 
 		String correo = JOptionPane.showInputDialog("Introduce el correo");
+		
 		try {
 			examinaCorreo(correo);
-		} catch(ArrayIndexOutOfBoundsException e){
+		} catch(Exception e){
 			System.out.println("Longitud de correo no es correcta.");
+			e.printStackTrace();
 		}
-		
-
 
 	}
 
-	static void examinaCorreo(String correo) throws ArrayIndexOutOfBoundsException {
+	static void examinaCorreo(String correo) throws LongitudCorreoErroneo {
 
 		int arroba = 0;
 		boolean punto = false;
@@ -23,7 +23,8 @@ public class compruebaCorreo {
 		if(correo.length()<=3) {
 
 			//ArrayIndexOutOfBoundsException e = new ArrayIndexOutOfBoundsException();
-			throw new ArrayIndexOutOfBoundsException();
+			//throw new ArrayIndexOutOfBoundsException();
+			throw new LongitudCorreoErroneo("El correo debe tener mas de 3 caracteres.");
 
 		} else {
 
@@ -46,4 +47,21 @@ public class compruebaCorreo {
 
 	}
 
+}
+
+
+class LongitudCorreoErroneo extends Exception{
+	
+	public LongitudCorreoErroneo() {
+		
+		
+		
+	}
+	
+	public LongitudCorreoErroneo(String msjError) {
+		
+		super(msjError);
+		
+	}
+	
 }
